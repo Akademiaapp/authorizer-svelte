@@ -20,8 +20,8 @@ export const store = writable({
         is_sign_up_enabled: false,
         is_strong_password_enabled: true
     },
-    user: JSON.parse(sessionStorage.getItem('authUser')) || null,
-    token: JSON.parse(sessionStorage.getItem('authToken')) || null,
+    user: JSON.parse(localStorage.getItem('authUser')) || null,
+    token: JSON.parse(localStorage.getItem('authToken')) || null,
     loading: false,
     setLoading: () => { },
     setToken: () => { },
@@ -35,6 +35,6 @@ export const store = writable({
     logout: async () => { }
 });
 store.subscribe(state => {
-    sessionStorage.setItem("authToken", JSON.stringify(state.token));
-    sessionStorage.setItem("authUser", JSON.stringify(state.user));
+    localStorage.setItem("authToken", JSON.stringify(state.token));
+    localStorage.setItem("authUser", JSON.stringify(state.user));
 });
