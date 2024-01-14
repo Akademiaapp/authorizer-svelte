@@ -4,7 +4,7 @@ import { Authorizer } from '@authorizerdev/authorizer-js';
 import { hasWindow } from '../utils/window';
 import type { AuthorizerState } from '$lib/types';
 
-export const store = writable<AuthorizerState>(localStorage.getItem("auth") || {
+export const store = writable<AuthorizerState>(sessionStorage.getItem("auth") || {
 	config: {
 		authorizerURL: '',
 		redirectURL: '/',
@@ -36,4 +36,4 @@ export const store = writable<AuthorizerState>(localStorage.getItem("auth") || {
 	}),
 	logout: async () => {}
 });
-store.subscribe(val => localStorage.setItem("auth", val));
+store.subscribe(val => sessionStorage.setItem("auth", val));
