@@ -1,8 +1,8 @@
 {
-	"name": "@authorizerdev/authorizer-svelte",
-	"version": "0.1.9",
+	"name": "akademia-authorizer-svelte",
+	"version": "0.1.10",
 	"license": "MIT",
-	"author": "Lakhan Samani",
+	"author": "arctixdev",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "svelte-kit sync && svelte-package",
